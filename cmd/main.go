@@ -5,6 +5,6 @@ import (
 )
 
 func main() {
-  router := gin.Default()
+  router := gin.Default() // Logger and recovery wrappers
   router.Run(":8080")
 }
