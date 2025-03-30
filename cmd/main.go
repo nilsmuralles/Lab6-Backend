@@ -17,6 +17,7 @@ func main() {
     api.GET("/series", handlers.GetSeries)
     api.GET("/series/:id", handlers.GetSeriesByID)
     api.DELETE("/series/:id", handlers.DeleteSeries)
+    api.PUT("/series/:id", handlers.UpdateSeries)
   }
 
   router.Run(":8080")
