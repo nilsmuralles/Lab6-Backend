@@ -20,10 +20,5 @@ func GetSeries(c *gin.Context)  {
 		return
 	}
 
-	utils.RespondWithJSON(c, models.ApiResponse{
-		Success: true,
-		Message: "Successfully retrieved series",
-		Series: series,
-	})
+  c.JSON(http.StatusOK, series)
 }
-

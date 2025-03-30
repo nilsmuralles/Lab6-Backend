@@ -1,7 +1,7 @@
 package models
 
 type ApiResponse struct {
-  Success bool `json:"success"`
-  Message string `json:"message"`
-  Series []Series `json:"series,omitempty"` // A pointer to a series, which allows null values
+  Success bool `json:"success,omitempty"`
+  Message string `json:"message,omitempty"`
+  Data any `json:"data,omitempty"` 
 }
