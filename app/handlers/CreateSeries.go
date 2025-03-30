@@ -29,8 +29,8 @@ func CreateSeries(c *gin.Context)  {
 	}
 
   result := db.Exec(
-    "INSERT INTO series (title, status_id, last_episode_watched, total_episodes, ranking) VALUES ($1, $2, $3, $4, $5)",
-    req.Title, utils.GetStatusID(req.Status), req.LastEpisodeWatched, req.TotalEpisodes, req.Ranking,
+    "INSERT INTO series (title, status, last_episode_watched, total_episodes, ranking) VALUES ($1, $2, $3, $4, $5)",
+    req.Title, req.Status, req.LastEpisodeWatched, req.TotalEpisodes, req.Ranking,
   ) 
 
   if result.Error != nil {

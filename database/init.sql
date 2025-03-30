@@ -20,32 +20,14 @@ END $$;
 -- Otorgar privilegios al usuario sobre la base de datos
 GRANT ALL PRIVILEGES ON DATABASE series_tracker TO usuario;
 
--- Crear la tabla 'status'
-CREATE TABLE IF NOT EXISTS status (
-    id SERIAL PRIMARY KEY,
-    status VARCHAR(50) NOT NULL UNIQUE,
-    created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP
-);
-
--- Insertar los valores en la tabla 'status'
-INSERT INTO status (status)
-VALUES 
-    ('Plan to Watch'), 
-    ('Watching'), 
-    ('Dropped'), 
-    ('Completed')
-ON CONFLICT (status) DO NOTHING;
-
 -- Crear la tabla 'series'
 CREATE TABLE IF NOT EXISTS series (
     id SERIAL PRIMARY KEY,
     title VARCHAR(100) NOT NULL UNIQUE,
-    status_id INT,
+    status VARCHAR(50) NOT NULL,
     last_episode_watched INT NOT NULL,
     total_episodes INT NOT NULL,
     ranking INT,
     created_at TIMESTAMP DEFAULT NOW(),
-    updated_at TIMESTAMP DEFAULT NOW(),
-    FOREIGN KEY (status_id) REFERENCES status(id) ON DELETE CASCADE
-);
-
+    updated_at TIMESTAMP DEFAULT NOW()
+)

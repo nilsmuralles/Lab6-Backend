@@ -14,6 +14,7 @@ func main() {
   api := router.Group("/api")
   {
     api.POST("/series", handlers.CreateSeries)
+    api.GET("/series", )
   }
 
   router.Run(":8080")
