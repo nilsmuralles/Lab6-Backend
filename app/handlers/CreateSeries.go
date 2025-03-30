@@ -13,9 +13,9 @@ import (
 type CreateSeriesRequest struct {
   Title string `json:"title" binding:"required"`
   Status string `json:"status" binding:"required"`
-  LastEpisodeWatched int `json:"lastEpisodeWatched" binding:"required"`
-  TotalEpisodes int `json:"totalEpisodes" binding:"required"`
-  Ranking int `json:"ranking" binding:"required"`
+  LastEpisodeWatched int `json:"lastEpisodeWatched"`
+  TotalEpisodes int `json:"totalEpisodes"`
+  Ranking int `json:"ranking,omitempty"`
 }
 
 func CreateSeries(c *gin.Context)  {

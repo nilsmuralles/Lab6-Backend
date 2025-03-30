@@ -19,7 +19,7 @@ func RespondWithError(c *gin.Context, message string, status int)  {
 
 func GetStatusID(status string) int {
   switch status {
-    case "Plan to watch":
+    case "Plan to Watch":
       return 1
     case "Watching":
       return 2

@@ -30,7 +30,7 @@ CREATE TABLE IF NOT EXISTS status (
 -- Insertar los valores en la tabla 'status'
 INSERT INTO status (status)
 VALUES 
-    ('Plan to watch'), 
+    ('Plan to Watch'), 
     ('Watching'), 
     ('Dropped'), 
     ('Completed')
