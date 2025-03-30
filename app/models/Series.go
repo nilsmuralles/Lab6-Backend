@@ -3,12 +3,12 @@ package models
 import "time"
 
 type Series struct {
-  ID uint
+  ID int
   Title string
   Status Status
-  LastEpisodeWatched uint
-  TotalEpisodes uint
-  Ranking uint
+  LastEpisodeWatched *int
+  TotalEpisodes int
+  Ranking int
   CreatedAt time.Time
   UpdatedAt time.Time
 }
