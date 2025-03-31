@@ -1,0 +1,27 @@
+services:
+  db:
+    image: postgres:16
+    container_name: series_db
+    restart: always
+    environment:
+      POSTGRES_USER: usuario
+      POSTGRES_PASSWORD: secret
+      POSTGRES_DB: series_tracker
+    ports:
+      - "5434:5434" # Exposes Postgres on port 5434
+    volumes:
+      - db_data:/var/lib/postgresql/data
+      - ./database/init.sql:/docker-entrypoint-initdb.d/init.sql
+
+  go:
+    build: .
+    container_name: series_tracker_backend
+    depends_on:
+      - db
+    ports:
+      - "8080:8080" # Exposes Go Backend on port 8080
+    environment:
+      DATABASE_URL: "host=localhost user=usuario password=secret dbname=series_tracker port=5434 sslmode=disable TimeZone=UTC"
+
+volumes:
+  db_data: 
