@@ -3,10 +3,19 @@ package main
 import (
 	"series-tracker-api/app/handlers"
 
+	_ "series-tracker-api/docs"
+	swaggerfiles "github.com/swaggo/files"
+  ginSwagger "github.com/swaggo/gin-swagger"
+
 	"github.com/gin-contrib/cors"
 	"github.com/gin-gonic/gin"
 )
 
+// @title Series Tracker API
+// @version 1.0
+// @description A REST API for the Series Tracker web app
+// @host localhost:8080
+// @BasePath /api
 func main() {
   router := gin.Default() // Logger and recovery wrappers
   router.Use(cors.Default())
@@ -22,6 +31,8 @@ func main() {
     api.PATCH("/series/:id/episode", handlers.UpdateEpisode)
 		api.PATCH("/series/:id/:direction", handlers.UpdateRanking)
   }
+
+	router.GET("/swagger/*any",ginSwagger.WrapHandler(swaggerfiles.Handler))
 
   router.Run(":8080")
 }

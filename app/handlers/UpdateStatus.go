@@ -15,6 +15,14 @@ type UpdatesStatusRequest struct {
   Status string `json:"status" binding:"required"`
 }
 
+// UpdateStatus godoc
+// @Summary Change a series' status
+// @Description Change a series' status, it can be either Plan to Watch, Watching, Completed or Dropped
+// @Tags Series
+// @Accept json
+// @Produce json
+// @Success 200 {object} models.Series
+// @Router /series/:id/status [PATCH]
 func UpdateStatus(c *gin.Context)  {
   db := database.ConnectToDataBase()
 

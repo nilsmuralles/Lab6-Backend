@@ -10,6 +10,14 @@ import (
 	"github.com/gin-gonic/gin"
 ) 
 
+// GetSeries godoc
+// @Summary Get all the series from the tracker
+// @Description Get all the series from the tracker
+// @Tags Series
+// @Accept json
+// @Produce json
+// @Success 200 {object} []models.Series
+// @Router /series [GET]
 func GetSeries(c *gin.Context)  {
   db := database.ConnectToDataBase()
   var series []models.Series
@@ -20,5 +28,5 @@ func GetSeries(c *gin.Context)  {
 		return
 	}
 
-  c.JSON(http.StatusOK, series)
+	utils.RespondWithJSON(c, series)
 }

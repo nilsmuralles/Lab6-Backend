@@ -11,6 +11,14 @@ import (
 	"github.com/gin-gonic/gin"
 ) 
 
+// GetSeriesByID godoc
+// @Summary Get a series through its ID
+// @Description Get a series through its ID
+// @Tags Series
+// @Accept json
+// @Produce json
+// @Success 200 {object} models.Series
+// @Router /series/:id [GET]
 func GetSeriesByID(c *gin.Context)  {
   db := database.ConnectToDataBase()
   id := c.Param("id")

@@ -11,6 +11,14 @@ import (
 	"github.com/gin-gonic/gin"
 )
 
+// UpdateEpisode godoc
+// @Summary Increment last episode watched
+// @Description Increment last episode watched through the series' ID
+// @Tags Series
+// @Accept json
+// @Produce json
+// @Success 200 {object} models.Series
+// @Router /series/:id [PATCH]
 func UpdateEpisode(c *gin.Context)  {
   db := database.ConnectToDataBase()
 

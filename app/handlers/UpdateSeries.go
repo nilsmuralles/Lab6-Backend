@@ -20,6 +20,14 @@ type UpdateSeriesRequest struct {
   Ranking int `json:"ranking,omitempty"`
 }
 
+// UpdateSeries godoc
+// @Summary Change the series as a whole
+// @Description This will modify the whole series
+// @Tags Series
+// @Accept json
+// @Produce json
+// @Success 200 {object} models.Series
+// @Router /series/:id [PUT]
 func UpdateSeries(c *gin.Context)  {
   db := database.ConnectToDataBase()
   id := c.Param("id")

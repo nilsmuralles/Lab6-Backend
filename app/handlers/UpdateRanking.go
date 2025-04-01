@@ -12,6 +12,14 @@ import (
 	"github.com/gin-gonic/gin"
 )
 
+// UpdateRanking godoc
+// @Summary Either increase or decrease a series' ranking
+// @Description Increase a series' ranking through its ID and the "direction" wether it's an upvote or a downvote
+// @Tags Series
+// @Accept json
+// @Produce json
+// @Success 200 {object} models.Series
+// @Router /series/:id/:direction [PATCH]
 func UpdateRanking(c *gin.Context) {
 	db := database.ConnectToDataBase()
 

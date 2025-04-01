@@ -1,0 +1,149 @@
+basePath: /api
+definitions:
+  models.Series:
+    properties:
+      created_at:
+        type: string
+      id:
+        type: integer
+      lastEpisodeWatched:
+        type: integer
+      ranking:
+        type: integer
+      status:
+        type: string
+      title:
+        type: string
+      totalEpisodes:
+        type: integer
+      updated_at:
+        type: string
+    type: object
+host: localhost:8080
+info:
+  contact: {}
+  description: A REST API for the Series Tracker web app
+  title: Series Tracker API
+  version: "1.0"
+paths:
+  /series:
+    get:
+      consumes:
+      - application/json
+      description: Get all the series from the tracker
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: OK
+          schema:
+            items:
+              $ref: '#/definitions/models.Series'
+            type: array
+      summary: Get all the series from the tracker
+      tags:
+      - Series
+    post:
+      consumes:
+      - application/json
+      description: Create a new series and add it to the databes
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: OK
+          schema:
+            $ref: '#/definitions/models.Series'
+      summary: Add a series to the tracker
+      tags:
+      - Series
+  /series/:id:
+    delete:
+      consumes:
+      - application/json
+      description: Delete a series from the tracker through its ID
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: OK
+          schema:
+            type: string
+      summary: Delete a series
+      tags:
+      - Series
+    get:
+      consumes:
+      - application/json
+      description: Get a series through its ID
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: OK
+          schema:
+            $ref: '#/definitions/models.Series'
+      summary: Get a series through its ID
+      tags:
+      - Series
+    patch:
+      consumes:
+      - application/json
+      description: Increment last episode watched through the series' ID
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: OK
+          schema:
+            $ref: '#/definitions/models.Series'
+      summary: Increment last episode watched
+      tags:
+      - Series
+    put:
+      consumes:
+      - application/json
+      description: This will modify the whole series
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: OK
+          schema:
+            $ref: '#/definitions/models.Series'
+      summary: Change the series as a whole
+      tags:
+      - Series
+  /series/:id/:direction:
+    patch:
+      consumes:
+      - application/json
+      description: Increase a series' ranking through its ID and the "direction" wether
+        it's an upvote or a downvote
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: OK
+          schema:
+            $ref: '#/definitions/models.Series'
+      summary: Either increase or decrease a series' ranking
+      tags:
+      - Series
+  /series/:id/status:
+    patch:
+      consumes:
+      - application/json
+      description: Change a series' status, it can be either Plan to Watch, Watching,
+        Completed or Dropped
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: OK
+          schema:
+            $ref: '#/definitions/models.Series'
+      summary: Change a series' status
+      tags:
+      - Series
+swagger: "2.0"

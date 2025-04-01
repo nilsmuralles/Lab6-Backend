@@ -18,6 +18,14 @@ type CreateSeriesRequest struct {
   Ranking int `json:"ranking,omitempty"`
 }
 
+// CreateSeries godoc
+// @Summary Add a series to the tracker
+// @Description Create a new series and add it to the databes
+// @Tags Series
+// @Accept json
+// @Produce json
+// @Success 200 {object} models.Series
+// @Router /series [POST]
 func CreateSeries(c *gin.Context)  {
   db := database.ConnectToDataBase()
   var req CreateSeriesRequest
