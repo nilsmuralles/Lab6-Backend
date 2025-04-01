@@ -19,6 +19,7 @@ func main() {
     api.DELETE("/series/:id", handlers.DeleteSeries)
     api.PUT("/series/:id", handlers.UpdateSeries)
     api.PATCH("/series/:id/status", handlers.UpdateStatus)
+    api.PATCH("/series/:id/episode", handlers.UpdateEpisode)
   }
 
   router.Run(":8080")
