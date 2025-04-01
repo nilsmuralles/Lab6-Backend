@@ -20,6 +20,7 @@ func main() {
     api.PUT("/series/:id", handlers.UpdateSeries)
     api.PATCH("/series/:id/status", handlers.UpdateStatus)
     api.PATCH("/series/:id/episode", handlers.UpdateEpisode)
+		api.PATCH("/series/:id/:direction", handlers.UpdateRanking)
   }
 
   router.Run(":8080")
