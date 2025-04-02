@@ -41,16 +41,16 @@ docker compose down
 ```
 
 ## Usage 
-| Method | Endpoint |
-|--------|----------|
-| `GET`  | `/series` |
-| `GET`  | `/series/:id` |
-| `POST` | `/series` |
-| `PUT`  | `/series/:id` |
-| `DELETE` | `/series/:id` |
-| `PATCH` | `/series/:id/:direction` |
-| `PATCH` | `/series/:id/status` |
-| `PATCH` | `/series/:id/episode` |
+| Method  | Endpoint               | Description |
+|---------|------------------------|-------------|
+| `GET`   | `/series`              | Get all the series from the tracker. |
+| `GET`   | `/series/:id`          | Fetch details of a specific series by its ID. |
+| `POST`  | `/series`              | Add a series to the tracker. |
+| `PUT`   | `/series/:id`          | Update the details of an existing series. |
+| `DELETE`| `/series/:id`          | Remove a series from the database. |
+| `PATCH` | `/series/:id/:direction` | Use **upvote** or **downvote** to upgrade or downgrede the ranking |
+| `PATCH` | `/series/:id/status`   | Update the watch status of a series (e.g., Watching, Completed, Dropped). |
+| `PATCH` | `/series/:id/episode`  | Update the last watched episode of a series. |
 
 ## Running frontend
-![Running frontend](frontend.png)
+![Image](https://github.com/user-attachments/assets/539d1060-991f-4966-9a32-ec35c7e03984)
