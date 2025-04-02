@@ -32,8 +32,8 @@ docker compose up --build
 ```
 
 3️⃣ Explore the API
-- You can now make requests to (localhost:8080/api)[localhost:8080/api].
-- You can also check the Swagger UI (localhost:8080/swagger/index.html)[localhost:8080/swagger/index.html].
+- Make requests to [http://localhost:8080/api](http://localhost:8080/api).
+- Check the Swagger documentation through [Swagger UI](http://localhost:8080/swagger/index.html).
 
 4️⃣ Stop the API
 ```sh
@@ -41,6 +41,16 @@ docker compose down
 ```
 
 ## Usage 
-
+| Method | Endpoint |
+|--------|----------|
+| `GET`  | `/series` |
+| `GET`  | `/series/:id` |
+| `POST` | `/series` |
+| `PUT`  | `/series/:id` |
+| `DELETE` | `/series/:id` |
+| `PATCH` | `/series/:id/:direction` |
+| `PATCH` | `/series/:id/status` |
+| `PATCH` | `/series/:id/episode` |
 
 ## Running frontend
+![Running frontend](frontend.png)
