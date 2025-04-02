@@ -40,7 +40,7 @@ docker compose up --build
 docker compose down
 ```
 
-## Usage 
+## Usage 📌
 | Method  | Endpoint               | Description |
 |---------|------------------------|-------------|
 | `GET`   | `/series`              | Get all the series from the tracker. |
@@ -52,5 +52,5 @@ docker compose down
 | `PATCH` | `/series/:id/status`   | Update the watch status of a series (e.g., Watching, Completed, Dropped). |
 | `PATCH` | `/series/:id/episode`  | Update the last watched episode of a series. |
 
-## Running frontend
+## Running frontend 📺
 ![Image](https://github.com/user-attachments/assets/539d1060-991f-4966-9a32-ec35c7e03984)
