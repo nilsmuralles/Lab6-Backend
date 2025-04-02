@@ -27,7 +27,7 @@ cd Lab6-Backend
 ```
 
 2️⃣ Build and run the Docker compose file
-```sh
+```bash
 docker compose up --build
 ```
 
@@ -36,21 +36,21 @@ docker compose up --build
 - Check the Swagger documentation through [Swagger UI](http://localhost:8080/swagger/index.html).
 
 4️⃣ Stop the API
-```sh
+```bash
 docker compose down
 ```
 
 ## Usage 📌
 | Method  | Endpoint               | Description |
 |---------|------------------------|-------------|
-| `GET`   | `/series`              | Get all the series from the tracker. |
-| `GET`   | `/series/:id`          | Fetch details of a specific series by its ID. |
-| `POST`  | `/series`              | Add a series to the tracker. |
-| `PUT`   | `/series/:id`          | Update the details of an existing series. |
-| `DELETE`| `/series/:id`          | Remove a series from the database. |
+| `GET`   | `/series`                | Get all the series from the tracker. |
+| `GET`   | `/series/:id`            | Fetch details of a specific series by its ID. |
+| `POST`  | `/series`                | Add a series to the tracker. |
+| `PUT`   | `/series/:id`            | Update the details of an existing series. |
+| `DELETE`| `/series/:id`            | Remove a series from the database. |
 | `PATCH` | `/series/:id/:direction` | Use **upvote** or **downvote** to upgrade or downgrede the ranking |
-| `PATCH` | `/series/:id/status`   | Update the watch status of a series (e.g., Watching, Completed, Dropped). |
-| `PATCH` | `/series/:id/episode`  | Update the last watched episode of a series. |
+| `PATCH` | `/series/:id/status`     | Update the watch status of a series (e.g., Watching, Completed, Dropped). |
+| `PATCH` | `/series/:id/episode`    | Update the last watched episode of a series. |
 
-## Running frontend 📺
+## Running frontend 🖼️
 ![Image](https://github.com/user-attachments/assets/539d1060-991f-4966-9a32-ec35c7e03984)
