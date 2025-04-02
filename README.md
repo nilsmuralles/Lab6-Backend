@@ -23,7 +23,7 @@ With this API, users can add, update, and remove series from their watchlist, tr
 1️⃣ Clone the repository and cd into the project
 ```sh
 git clone https://github.com/nilsmuralles/Lab6-Backend.git
-cd lab6-backend
+cd Lab6-Backend
 ```
 
 2️⃣ Build and run the Docker compose file
