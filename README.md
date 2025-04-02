@@ -4,15 +4,15 @@ The Series Tracker API is designed to help users manage and track their backlog 
 With this API, users can add, update, and remove series from their watchlist, track their progress, and organize their series efficiently.
 
 ## Features 📦
-✅ CRUD Operations – Create, read, update, and delete series in the database.
-✅ Track Series Progress – Update the status, episode, and ranking of a series.
-✅ Retrieve Series Data – Fetch all series or get details of a specific one.
-✅ RESTful API – Uses standard HTTP methods for easy integration.
-✅ JSON Responses – Structured and easy-to-use data format.
-✅ Database Integration – Seamless communication with a relational database.
-✅ Swagger Documentation – API is documented with Swagger for easy exploration.
-✅ Fully Dockerized – The API and database run in containers for easy deployment.
-✅ One-Command Setup – Run the entire stack with:
+- ✅ CRUD Operations – Create, read, update, and delete series in the database.
+- ✅ Track Series Progress – Update the status, episode, and ranking of a series.
+- ✅ Retrieve Series Data – Fetch all series or get details of a specific one.
+- ✅ RESTful API – Uses standard HTTP methods for easy integration.
+- ✅ JSON Responses – Structured and easy-to-use data format.
+- ✅ Database Integration – Seamless communication with a relational database.
+- ✅ Swagger Documentation – API is documented with Swagger for easy exploration.
+- ✅ Fully Dockerized – The API and database run in containers for easy deployment.
+- ✅ One-Command Setup – Run the entire stack with:
 
 ## Getting started 🚀
 ### Prerequisits 🛠️
