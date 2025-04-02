@@ -18,7 +18,13 @@ import (
 // @BasePath /api
 func main() {
   router := gin.Default() // Logger and recovery wrappers
-  router.Use(cors.Default())
+	router.Use(cors.New(cors.Config{
+		AllowOrigins:     []string{"*"},
+		AllowMethods:     []string{"GET", "POST", "PUT", "PATCH", "DELETE"},
+		AllowHeaders:     []string{"Origin", "Content-Type", "Authorization"},
+		ExposeHeaders:    []string{"Content-Length"},
+		AllowCredentials: true,
+	}))
 
   api := router.Group("/api")
   {
